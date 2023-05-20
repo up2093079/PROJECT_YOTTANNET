@@ -1,0 +1,19 @@
+ 
+vrf definition {{ vrf_name }}
+ rd {{ rt_rd }}
+
+address-family ipv4
+ route-target both {{ rt_rd }}
+
+interface {{ intf }}
+ vrf forwarding {{ vrf_name }}
+ ip address {{ ip_addy }} {{ mask }}
+ no shutdown
+
+router bgp 65000
+
+ address-family ipv4 vrf {{ vrf_name }}
+ redistribute connected
+ redistribute static
+
+

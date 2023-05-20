@@ -1,0 +1,6 @@
+device_name,vrf_name,rt_rd,intf,ip_addy,mask
+
+csr-pe1,NEW_L3VPN,65000:3,GigabitEthernet4,10.1.1.9,255.255.255.252
+csr-pe2,NEW_L3VPN,65000:3,GigabitEthernet4,10.1.1.13,255.255.255.252
+csr-pe3,NEW_L3VPN2,65000:4,GigabitEthernet4,10.1.1.21,255.255.255.252
+csr-pe4,INTERNET,65000:2,GigabitEthernet3,10.2.1.1,255.255.255.252

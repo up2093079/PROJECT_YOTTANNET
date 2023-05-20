@@ -1,0 +1,19 @@
+vrf definition NEW_L3VPN
+rd 65000:3
+!
+address-family ipv4
+  route-target export 65000:3
+  route-target import 65000:3
+ exit-address-family
+!
+int g3
+vrf forwarding NEW_L3VPN
+ip address 10.1.1.1 255.255.255.252
+!
+router bgp 65000
+address-family ipv4 vrf NEW_L3VPN
+redistribute connected
+redistribute static
+!
+end
+
